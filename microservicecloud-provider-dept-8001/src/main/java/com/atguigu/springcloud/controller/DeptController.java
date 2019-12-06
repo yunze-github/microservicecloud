@@ -28,6 +28,7 @@ public class DeptController {
 	 * 3.provider微服务启动类上添加服务发现注解@EnableDiscoveryClient
 	 * 4.consumer微服务提供一个对外访问的服务发现api
 	 */
+	@SuppressWarnings("unused")
 	@Autowired
 	private DiscoveryClient discoveryClient;
 	

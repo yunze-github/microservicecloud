@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
  
 import com.atguigu.springcloud.entities.Dept;
- 
-@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+
+//简单实现Fegin负载均衡 （接口和注解方式）
+//@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+@FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService
 {
   @RequestMapping(value = "/dept/get/{id}",method = RequestMethod.GET)
